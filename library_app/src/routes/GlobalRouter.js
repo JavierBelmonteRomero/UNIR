@@ -17,7 +17,7 @@ function GlobalRouter() {
             <Routes>
                 <Route path="/" exact element={<Home />} />
                 <Route path="/catalog/:subject" exact element={<Layout><Catalog /></Layout>} />
-                <Route path="/book/:key/:cover_id" element={<Layout><Book/></Layout>} />
+                <Route path="/book/:subject/:key/:cover_id" element={<Layout><Book/></Layout>} />
                 <Route path="/rent-history" element={<Layout><RentHistory /></Layout>} />
                 <Route path="/about" element={<Layout><About /></Layout>} />
                 <Route path="*" element={<Layout><NotFound /></Layout>} />

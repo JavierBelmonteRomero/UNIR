@@ -32,7 +32,7 @@ const Catalog = () => {
       <h2>Books </h2>
       {loading ? (
         <div className="spinner"></div>
-      ) : <BookList books={books} /> }
+      ) : <BookList books={books} subject={subject} /> }
     </div>
   );
 };

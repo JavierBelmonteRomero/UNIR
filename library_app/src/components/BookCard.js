@@ -3,7 +3,7 @@ import BookCover from './BookCover';
 import BookDetailsCatalog from './BookDetailsCatalog';
 import { useNavigate } from 'react-router-dom';
 
-const BookCard = ({ book }) => {
+const BookCard = ({ book, subject }) => {
   const key = book.key;
   const cover_id = book.cover_id;
 
@@ -11,7 +11,7 @@ const BookCard = ({ book }) => {
 
   const handleCoverClick = () => {
     const uniqueIdentifier = key.split('/').pop();
-    navigate(`/book/${uniqueIdentifier}/${cover_id}`);
+    navigate(`/book/${subject}/${uniqueIdentifier}/${cover_id}`);
   };
 
   return (

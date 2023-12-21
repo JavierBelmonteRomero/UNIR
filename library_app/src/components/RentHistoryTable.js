@@ -1,6 +1,5 @@
 import React from 'react';
-import RemoveButton from './RemoveButton';
-import ExtendRentButton from './ExtendRentButton';
+import Button from './Button';
 import useRentHistory from '../hooks/useRentHistory';
 
 
@@ -23,8 +22,8 @@ const RentHistoryTable = ({ rentedBooks }) => {
                         <td>{rentedBook.rentalTime} days</td>
                         <td>
                             {/* Funciones flecha para evitar invocar las funciones en el renderizado del componente. */}
-                            <RemoveButton onClick={() => removeRentedBook(rentedBook.id)} />
-                            <ExtendRentButton onClick={() => modifyRentedBookPeriod(rentedBook.id, rentedBook.rentalTime + 7)} />
+                            <Button className={'remove-button'} onClick={() => removeRentedBook(rentedBook.id)} description={'Remove'}/>
+                            <Button className={'extend-rent-button'} onClick={() => modifyRentedBookPeriod(rentedBook.id, rentedBook.rentalTime + 7)} description={'Extend Rent'}/>
                         </td>
                     </tr>
                 ))}

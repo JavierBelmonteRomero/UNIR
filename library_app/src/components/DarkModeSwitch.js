@@ -22,7 +22,7 @@ const DarkModeSwitch = ({ onChange }) => {
     <div className='dark-mode-toggle'>
         <label className='switch'>
             <input type='checkbox' checked={isDarkMode} onChange={handleToggle} />
-            <span className='slider round'></span>
+            <span className='slider'></span>
         </label>
         <span className='dark-mode-label'>Dark Mode</span>
     </div>

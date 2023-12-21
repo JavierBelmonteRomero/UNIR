@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
-import RentButton from './RentButton';
-import ExtendRentButton from './ExtendRentButton';
+import Button from './Button';
 import useRentHistory from '../hooks/useRentHistory';
+import { useNavigate } from 'react-router-dom';
 
-const BookRentOptions = ({ book }) => {
+const BookRentOptions = ({ book, subject }) => {
     const [rentalDays, setRentalDays] = useState(7);
     const [isRented, setIsRented] = useState(false);
 
     const [rentedBookId, setRentedBookId] = useState(null);
     const { addRentedBook, modifyRentedBookPeriod } = useRentHistory();
+    const navigate = useNavigate();
+
+    const handleCoverClick = () => {
+        navigate(`/catalog/${subject}`);
+    };
 
     const handleRent = () => {
         setIsRented(true);
@@ -35,8 +40,9 @@ const BookRentOptions = ({ book }) => {
                 <div>
                     <h3>Rent Options:</h3>
                     <p>Rental Period: {rentalDays} days</p>
-                    <RentButton onClick={handleRent} />
-                    <ExtendRentButton onClick={handleExtendRent} />
+                    <Button className={'rent-button'} onClick={handleRent} description={'Rent'} />
+                    <Button className={'extend-rent-button'} onClick={handleExtendRent} description={'Extend Rent'} />
+                    <Button className={'back-to-catalog-button'} onClick={handleCoverClick} description={'Back'} />
                 </div>
             )}
         </div>

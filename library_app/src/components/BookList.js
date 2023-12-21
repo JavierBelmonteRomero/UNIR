@@ -1,11 +1,11 @@
 import React from 'react';
 import BookCard from './BookCard';
 
-const BookList = ({ books }) => {
+const BookList = ({ books, subject }) => {
   return (
     <div className='book-list'>
       {books.map((book) => (
-        <BookCard book={book} />
+        <BookCard book={book} subject={subject} />
       ))}
     </div>
   );
